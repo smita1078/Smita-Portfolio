@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smita Prajapati — Creative Developer</title>
+
+    <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<nav>
+    <div class="logo">SP</div>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#github">GitHub</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero-section">
+    <div class="hero-bg">
+        <div class="mesh-gradient"></div>
+    </div>
+    <div class="hero-content">
+        <div class="status-badge">
+            <div class="status-dot"></div>
+            <span>Available for opportunities</span>
+        </div>
+        <h1 class="hero-title">Smita Prajapati</h1>
+        <p class="hero-subtitle">SENIOR ANALYST | Deutsche Bank</p>
+        <div class="hero-buttons">
+            <a href="#work" class="hero-btn hero-btn-primary">
+                <i class="fas fa-folder-open"></i>
+                <span>View Projects</span>
+            </a>
+            <a href="files/RESUME_SMITA_PRAJAPATI.pdf" download class="hero-btn hero-btn-secondary">
+                <i class="fas fa-download"></i>
+                <span>Download Resume</span>
+            </a>
+        </div>
+    </div>
+    <div class="scroll-indicator" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">
+        <span class="scroll-text"></span>
+        <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title fade-up">About Me</h2>
+    <div class="about-grid">
+        <div class="about-image fade-up">
+            <img src="assets/images/Smita.jpg" alt="Smita">
+        </div>
+        <div class="about-text fade-up">
+            <p style="margin-bottom: 2rem;">
+                I'm a <strong>Senior Analyst</strong> at Deutsche Bank, specializing in building scalable backend systems and comprehensive test automation frameworks. I architect <strong>microservices with Java and Spring Boot</strong>, develop <strong>REST APIs</strong>, and create automation solutions that have reduced manual testing efforts by 80% while ensuring production reliability.
+            </p>
+            <p style="margin-bottom: 2rem;">
+                As a <strong>Silver Medalist from NIT Raipur</strong> (9.53 CGPA), I combine strong software engineering fundamentals with quality-first development practices. I'm an active <strong>open source contributor</strong> to Checkstyle with 30+ merged PRs, demonstrating my commitment to code quality and collaborative development.
+            </p>
+            <p>
+                My expertise spans backend development, test automation frameworks, cloud technologies (GCP), and AI integration. I build robust software while ensuring it's testable, maintainable, and production-ready — bridging development and quality engineering.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="education">
+    <h2 class="section-title fade-up">Education</h2>
+    <div class="education-grid">
+        <div class="education-card">
+            <div class="education-degree">B.Tech in Electronics & Communication Engineering</div>
+            <div class="education-institution">National Institute of Technology, Raipur</div>
+            <div class="education-year">2020 - 2024</div>
+            <div class="education-score">9.53 CGPA - Silver Medalist</div>
+        </div>
+        <div class="education-card">
+            <div class="education-degree">Class 12th - CBSE Board</div>
+            <div class="education-institution">Delhi Public School Bhilai</div>
+            <div class="education-year">2019 - 2020</div>
+            <div class="education-score">94.8%</div>
+        </div>
+        <div class="education-card">
+            <div class="education-degree">Class 10th - CBSE Board</div>
+            <div class="education-institution">Delhi Public School Bhilai</div>
+            <div class="education-year">2017 - 2018</div>
+            <div class="education-score">94.8%</div>
+        </div>
+    </div>
+</section>
+
+<section id="work">
+    <h2 class="section-title fade-up">Featured Projects</h2>
+
+    <div class="work-item" onclick="window.open('https://github.com/smita1078/FinWise_AI_Powered_Voice_Assistant', '_blank')">
+        <div class="work-header">
+            <h3 class="work-title">FinWise AI Voice Bot</h3>
+            <span class="work-number">01</span>
+        </div>
+        <div class="work-meta">
+            <span>2024</span>
+            <span>AI / GCP Cloud/ Dialogflow</span>
+        </div>
+        <p class="work-desc">
+            Engineered voice-activated multilingual financial assistant using Google Cloud Dialogflow CX with Vertex AI, streamlining customer experience with real-time voice processing for banking/financial information.
+        </p>
+        <div class="work-tags">
+            <span class="tag">Dialogflow CX</span>
+            <span class="tag">Google Cloud</span>
+            <span class="tag">Vertex AI</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Voice Recognition</span>
+        </div>
+        <div class="work-links">
+            <a href="https://github.com/smita1078/FinWise_AI_Powered_Voice_Assistant" target="_blank" class="work-link" onclick="event.stopPropagation()">
+                <i class="fab fa-github"></i> Source Code
+            </a>
+        </div>
+    </div>
+
+    <div class="work-item" onclick="window.open('https://music-drumkit.netlify.app/', '_blank')">
+        <div class="work-header">
+            <h3 class="work-title">Music DrumKit</h3>
+            <span class="work-number">02</span>
+        </div>
+        <div class="work-meta">
+            <span>2024</span>
+            <span>Web Development</span>
+        </div>
+        <p class="work-desc">
+            Interactive drum kit allowing users to play various musical notes and create unique compositions. Built with vanilla JavaScript, featuring keyboard and mouse interactions with realistic drum sounds.
+        </p>
+        <div class="work-tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Event Handling</span>
+        </div>
+        <div class="work-links">
+            <a href="https://music-drumkit.netlify.app/" target="_blank" class="work-link" onclick="event.stopPropagation()">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/smita1078/Music-DrumKit" target="_blank" class="work-link" onclick="event.stopPropagation()">
+                <i class="fab fa-github"></i> Source Code
+            </a>
+        </div>
+    </div>
+
+    <div class="work-item fade-up" onclick="window.open('https://smita-portfolio.netlify.app', '_blank')">
+        <div class="work-header">
+            <h3 class="work-title">Personal Portfolio</h3>
+            <span class="work-number">03</span>
+        </div>
+        <div class="work-meta">
+            <span>2024</span>
+            <span>Web Development</span>
+        </div>
+        <p class="work-desc">
+            Responsive portfolio showcasing projects, skills, and professional experience
+            with modern UI/UX design principles and interactive GitHub statistics.
+        </p>
+        <div class="work-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Bootstrap</span>
+        </div>
+        <div class="work-links">
+            <a href="https://smita-portfolio.netlify.app" target="_blank" class="work-link" onclick="event.stopPropagation()">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/smita1078/portfolio" target="_blank" class="work-link" onclick="event.stopPropagation()">
+                <i class="fab fa-github"></i> Source Code
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title fade-up">Technical Expertise</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-robot"></i></div>
+            <div class="skill-name">Test Automation</div>
+            <div class="skill-desc">Selenium WebDriver, WebdriverIO, Cucumber BDD, API Testing (REST), Framework Design</div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-code"></i></div>
+            <div class="skill-name">Backend Development</div>
+            <div class="skill-desc">Java, Spring Boot, TypeScript, JavaScript, Microservices Architecture</div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+            <div class="skill-name">Cloud & AI</div>
+            <div class="skill-desc">Google Cloud Platform, Dialogflow CX, Vertex AI</div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-rocket"></i></div>
+            <div class="skill-name">CI/CD & DevOps</div>
+            <div class="skill-desc">Jenkins, TeamCity, Docker, Allure, Splunk</div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-database"></i></div>
+            <div class="skill-name">Database</div>
+            <div class="skill-desc">SQL, MySQL, Database Design & Optimization</div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-github"></i></div>
+            <div class="skill-name">Version Control</div>
+            <div class="skill-desc">Git, GitHub, Collaborative Development</div>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <h2 class="section-title fade-up">Experience</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">July 2024 — Present</div>
+            <h3 class="timeline-title">Senior Analyst</h3>
+            <div class="timeline-company">Deutsche Bank · Investment Banking · Pune, India</div>
+            <ul class="timeline-impact">
+                <li>Built a full-scale regression suite from scratch, reducing manual effort by 80% and improving test reliability</li>
+                <li>Automated 200+ end-to-end functionality tests, enhancing system performance and stability</li>
+                <li>Implemented a backend microservice for DORA KPIs metrics to identify low test automation coverage across applications</li>
+                <li>Designed and deployed microservices for secure data ingestion using REST APIs</li>
+                <li>Awarded the RCP Excellence Award for achieving 50% code reduction and delivering a scalable, clean, and best-practice-driven architecture across the platform</li>
+            </ul>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">May 2023 — July 2023</div>
+            <h3 class="timeline-title">Technology Analyst Intern</h3>
+            <div class="timeline-company">Deutsche Bank · Pune, India</div>
+            <ul class="timeline-impact">
+                <li>Deployed centralized logging solution using GWT Logger Utils and Splunk, enabling real-time analysis of application logs and reducing debugging time by 30%</li>
+                <li>Automated regression testing for the DNR tool using Allure, increasing test efficiency by 25%</li>
+            </ul>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">December 2024 — Present</div>
+            <h3 class="timeline-title">Open Source Contributor</h3>
+            <div class="timeline-company">Checkstyle (GSOC Organization)</div>
+            <ul class="timeline-impact">
+                <li>Contributed to Checkstyle, improving code quality and maintainability for 1,000+ developers using the open-source static analysis tool</li>
+                <li>Merged 30+ pull requests and collaborated with the global developer community via code reviews and discussions</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="achievements">
+    <h2 class="section-title fade-up">Achievements & Recognition</h2>
+    <div class="achievements-grid">
+        <div class="achievement-card">
+            <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+            <div class="achievement-text">
+                <div class="achievement-title">Silver Medalist - NIT Raipur</div>
+                <div class="achievement-desc">B.Tech in Electronics & Communication Engineering (9.53 CGPA) - 2024</div>
+            </div>
+        </div>
+        <div class="achievement-card">
+            <div class="achievement-icon"><i class="fas fa-award"></i></div>
+            <div class="achievement-text">
+                <div class="achievement-title">RCP Excellence Award - Deutsche Bank</div>
+                <div class="achievement-desc">Recognized for achieving 50% code reduction and delivering scalable architecture - 2025</div>
+            </div>
+        </div>
+        <div class="achievement-card">
+            <div class="achievement-icon"><i class="fas fa-star"></i></div>
+            <div class="achievement-text">
+                <div class="achievement-title">Winner - The Economic Times Campus Star 6.0</div>
+                <div class="achievement-desc">Brightest Engineering Minds (2022-2023)</div>
+            </div>
+        </div>
+        <div class="achievement-card">
+            <div class="achievement-icon"><i class="fas fa-cloud"></i></div>
+            <div class="achievement-text">
+                <div class="achievement-title">Google Cloud Platform Certified</div>
+                <div class="achievement-desc">Learn to Earn Cloud Challenges by Qwiklabs & Google Cloud</div>
+            </div>
+        </div>
+        <div class="achievement-card">
+            <div class="achievement-icon"><i class="fas fa-flask"></i></div>
+            <div class="achievement-text">
+                <div class="achievement-title">Research Fellow - IISc Bangalore</div>
+                <div class="achievement-desc">Indian Academy of Sciences Summer Research Fellowship (2022)</div>
+            </div>
+        </div>
+        <div class="achievement-card">
+            <div class="achievement-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="achievement-text">
+                <div class="achievement-title">Top Participant - Deutsche Bank Global Hackathon 2025</div>
+                <div class="achievement-desc">Competed among 380 teams globally</div>
+            </div>
+        </div>
+        <div class="achievement-card">
+            <div class="achievement-icon"><i class="fas fa-users"></i></div>
+            <div class="achievement-text">
+                <div class="achievement-title">Core Manager - Nrityam Dance Club, NIT Raipur</div>
+                <div class="achievement-desc">Leadership & Management (2021-2024)</div>
+            </div>
+        </div>
+        <div class="achievement-card">
+            <div class="achievement-icon"><i class="fas fa-medal"></i></div>
+            <div class="achievement-text">
+                <div class="achievement-title">Scholar Badge Awardee - DPS Bhilai</div>
+                <div class="achievement-desc">Outstanding all-round performance (2018-2019)</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="github" class="fade-up">
+    <h2 class="section-title">GitHub Activity</h2>
+
+    <div class="github-stats">
+        <div class="github-card">
+            <div id="ghRepos" class="github-value">--</div>
+            <div class="github-label">Repos</div>
+        </div>
+        <div class="github-card">
+            <div id="ghPROpen" class="github-value">--</div>
+            <div class="github-label">PRs Opened</div>
+        </div>
+        <div class="github-card">
+            <div id="ghPRMerged" class="github-value">--</div>
+            <div class="github-label">PRs Merged</div>
+        </div>
+        <div class="github-card">
+            <div id="ghPRClosed" class="github-value">--</div>
+            <div class="github-label">PRs Closed</div>
+        </div>
+    </div>
+
+    <div class="latest-commits">
+        <h3 style="font-size: 1.8rem; margin-bottom: 2rem; font-weight: 600;">Latest Commits</h3>
+        <div id="latestCommits" class="commits-grid">
+            <div style="text-align: center; padding: 2rem; color: var(--text-dim);">Loading latest commits...</div>
+        </div>
+    </div>
+
+    <div class="contribution-section">
+        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Contribution Activity</h3>
+        <div class="contribution-wrapper">
+            <div class="contribution-months"></div>
+            <div class="contribution-content">
+                <div class="contribution-days-labels">
+                    <span>Mon</span>
+                    <span>Wed</span>
+                    <span>Fri</span>
+                </div>
+                <div id="contributionGraph" class="contribution-graph"></div>
+            </div>
+            <div class="graph-legend">
+                <span>Less</span>
+                <div class="graph-legend-item">
+                    <div class="contribution-day"></div>
+                </div>
+                <div class="graph-legend-item">
+                    <div class="contribution-day level-1"></div>
+                </div>
+                <div class="graph-legend-item">
+                    <div class="contribution-day level-2"></div>
+                </div>
+                <div class="graph-legend-item">
+                    <div class="contribution-day level-3"></div>
+                </div>
+                <div class="graph-legend-item">
+                    <div class="contribution-day level-4"></div>
+                </div>
+                <span>More</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="activity-overview">
+        <h3 style="font-size: 1.8rem; margin-bottom: 2rem; font-weight: 600;">Activity Overview</h3>
+        <div class="activity-chart-wrapper">
+            <div class="activity-chart">
+                <canvas id="activityChart"></canvas>
+            </div>
+            <div class="activity-stats">
+                <div class="activity-stat">
+                    <div class="stat-value" id="statCommits">--</div>
+                    <div class="stat-label">Commits</div>
+                </div>
+                <div class="activity-stat">
+                    <div class="stat-value" id="statCodeReview">--</div>
+                    <div class="stat-label">Code Review</div>
+                </div>
+                <div class="activity-stat">
+                    <div class="stat-value" id="statPRs">--</div>
+                    <div class="stat-label">Pull Requests</div>
+                </div>
+                <div class="activity-stat">
+                    <div class="stat-value" id="statIssues">--</div>
+                    <div class="stat-label">Issues</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="https://github.com/smita1078" target="_blank" class="contact-link">
+            <i class="fab fa-github"></i> View GitHub Profile
+        </a>
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <h2 class="contact-title fade-up">Let's Work Together</h2>
+    <p class="fade-up" style="color: var(--text-dim); font-size: 1.2rem; max-width: 600px;">
+        Open to SDE/SDET opportunities where automation and engineering quality matter. Let's build something amazing.
+    </p>
+    <div class="contact-links fade-up">
+        <a href="mailto:smita.prajapati082@gmail.com" class="contact-link">
+            <i class="fas fa-envelope"></i> Email
+        </a>
+        <a href="https://github.com/smita1078" target="_blank" class="contact-link">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/smita-prajapati082/" target="_blank" class="contact-link">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://leetcode.com/u/Sp10078/" target="_blank" class="contact-link">
+            <i class="fas fa-code"></i> LeetCode
+        </a>
+    </div>
+</section>
+
+<footer>
+    <div>© 2025 Smita Prajapati</div>
+    <div>Silver Medalist NIT Raipur | Senior Analyst | Checkstyle Contributor</div>
+</footer>
+
+<!-- External Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+<!-- Custom Scripts -->
+<script src="assets/js/cursor.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/github.js"></script>
+
+</body>
+</html>
