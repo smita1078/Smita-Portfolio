@@ -1,0 +1,111 @@
+/* ================================
+   ANIMATIONS
+   ================================ */
+
+/* Grain Animation */
+@keyframes grain {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-5%, -10%); }
+    30% { transform: translate(3%, -15%); }
+    50% { transform: translate(12%, 9%); }
+    70% { transform: translate(9%, 4%); }
+    90% { transform: translate(-1%, 7%); }
+}
+
+.grain {
+    animation: grain 8s steps(10) infinite;
+}
+
+/* Mesh Gradient Animation */
+@keyframes mesh {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.2) rotate(5deg); }
+}
+
+.mesh-gradient {
+    animation: mesh 20s ease infinite;
+}
+
+/* Status Dot Blink */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.status-dot {
+    animation: blink 2s infinite;
+}
+
+/* Hero Title Reveal */
+@keyframes titleReveal {
+    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(30px); }
+}
+
+.hero-title {
+    animation: titleReveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-subtitle {
+    animation: fadeIn 1.5s 0.5s backwards;
+}
+
+.hero-buttons {
+    animation: fadeIn 1.5s 0.8s backwards;
+}
+
+/* Mouse Float */
+@keyframes mouseFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.scroll-mouse {
+    animation: mouseFloat 2s infinite ease-in-out;
+}
+
+/* Scroll Wheel Animation */
+@keyframes wheelScroll {
+    0% { opacity: 1; top: 8px; }
+    50% { opacity: 0.5; top: 18px; }
+    100% { opacity: 0; top: 24px; }
+}
+
+.scroll-wheel {
+    animation: wheelScroll 2s infinite ease-in-out;
+}
+
+/* Fade Up (used with Intersection Observer) */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Chart Animation */
+@keyframes chartFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.github-value,
+.github-label {
+    animation: chartFadeIn 0.5s ease-in;
+}
