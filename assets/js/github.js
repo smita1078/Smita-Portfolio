@@ -1,31 +1,42 @@
 /* ================================
-   GITHUB API INTEGRATION 
-   Handles fork branches and shows all recent commits
+   GITHUB API INTEGRATION - SECURE VERSION
+   Uses Netlify serverless function to hide token
    ================================ */
 
 // Configuration
-// const GITHUB_TOKEN = ''; // Add your GitHub token here
-const USERNAME = 'smita1078'; // Add your username here
+const USERNAME = 'smita1078';
 
 // ================================
 // UTILITY FUNCTIONS
 // ================================
 
 async function fetchWithAuth(url, options = {}) {
-    const headers = {
-        'Accept': 'application/vnd.github.v3+json',
-        ...options.headers
-    };
-
-    if (GITHUB_TOKEN) {
-        headers['Authorization'] = `token ${GITHUB_TOKEN}`;
+    // Extract the endpoint path from the full GitHub API URL
+    const endpoint = url.replace('https://api.github.com', '');
+    const isCommitSearch = url.includes('/search/commits');
+    
+    try {
+        // Call Netlify serverless function instead of GitHub directly
+        const response = await fetch('/.netlify/functions/github-proxy', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                endpoint: endpoint,
+                isCommitSearch: isCommitSearch
+            })
+        });
+        
+        if (!response.ok) {
+            console.error(`Proxy returned ${response.status}`);
+        }
+        
+        return response;
+    } catch (error) {
+        console.error('Proxy request failed:', error);
+        throw error;
     }
-
-    if (url.includes('/search/commits')) {
-        headers['Accept'] = 'application/vnd.github.cloak-preview+json';
-    }
-
-    return fetch(url, { ...options, headers });
 }
 
 function updateElement(id, value) {
@@ -88,7 +99,7 @@ function getLocalDateKey(utcDateString) {
 
 async function loadGitHub() {
     try {
-        console.log('🔄 Fetching GitHub data...');
+        console.log(' Fetching GitHub data...');
 
         const cacheBuster = Date.now();
         const [userRes, repoRes, prOpenedRes, prMergedRes, prClosedRes] = await Promise.all([
@@ -109,7 +120,7 @@ async function loadGitHub() {
         const prMerged = await prMergedRes.json();
         const prClosedRaw = await prClosedRes.json();
 
-        console.log('✅ Data fetched successfully');
+        console.log(' Data fetched successfully');
 
         updateElement("ghRepos", user.public_repos);
 
@@ -129,7 +140,7 @@ async function loadGitHub() {
         }, 100);
 
     } catch (err) {
-        console.error("❌ GitHub API error:", err);
+        console.error(" GitHub API error:", err);
         showError(err.message);
     }
 }
@@ -151,8 +162,7 @@ async function fetchLatestCommits(repos) {
         const thirtyDaysAgo = new Date();
         thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 
-        // Check user's own repos
-        console.log(` Checking ${repos.length} repos...`);
+        console.log(`📚 Checking ${repos.length} repos...`);
         const sortedRepos = repos.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
 
         for (const repo of sortedRepos.slice(0, 15)) {
@@ -181,14 +191,13 @@ async function fetchLatestCommits(repos) {
                 if (repo.fork) {
                     console.log(`   ${repo.name} is a fork, checking upstream and branches...`);
 
-                    // Get repo info for parent
                     const repoInfoRes = await fetchWithAuth(`https://api.github.com/repos/${repo.full_name}?_=${cacheBuster}`);
                     if (repoInfoRes.ok) {
                         const repoInfo = await repoInfoRes.json();
 
                         if (repoInfo.parent) {
                             const upstreamName = repoInfo.parent.full_name;
-                            console.log(`    📍 Upstream: ${upstreamName}`);
+                            console.log(`     Upstream: ${upstreamName}`);
 
                             // Check upstream
                             const upstreamRes = await fetchWithAuth(
@@ -210,7 +219,7 @@ async function fetchLatestCommits(repos) {
                             }
 
                             // Check ALL branches in fork
-                            console.log(`    Checking all branches...`);
+                            console.log(`     Checking all branches...`);
                             const branchesRes = await fetchWithAuth(
                                 `https://api.github.com/repos/${repo.full_name}/branches?per_page=100&_=${cacheBuster}`
                             );
@@ -582,8 +591,7 @@ function createActivityChart(prsOpened, prsMerged) {
 // ================================
 
 document.addEventListener("DOMContentLoaded", () => {
-    console.log(' GitHub Dashboard Initializing...');
-    console.log('Token provided:', GITHUB_TOKEN ? 'Yes ✓' : 'No');
+    console.log(' GitHub Dashboard Initializing (Secure Mode)...');
     loadGitHub();
 
     const refreshBtn = document.getElementById('refreshCommits');
@@ -616,3 +624,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
