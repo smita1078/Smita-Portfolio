@@ -1,11 +1,11 @@
 /* ================================
-   GITHUB API INTEGRATION - FINAL FIXED VERSION
+   GITHUB API INTEGRATION 
    Handles fork branches and shows all recent commits
    ================================ */
 
 // Configuration
 // const GITHUB_TOKEN = ''; // Add your GitHub token here
-const USERNAME = 'smita1078';
+const USERNAME = 'smita1078'; // Add your username here
 
 // ================================
 // UTILITY FUNCTIONS
@@ -152,7 +152,7 @@ async function fetchLatestCommits(repos) {
         thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 
         // Check user's own repos
-        console.log(`📚 Checking ${repos.length} repos...`);
+        console.log(` Checking ${repos.length} repos...`);
         const sortedRepos = repos.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
 
         for (const repo of sortedRepos.slice(0, 15)) {
@@ -179,7 +179,7 @@ async function fetchLatestCommits(repos) {
 
                 // If this is a fork, check upstream AND all branches
                 if (repo.fork) {
-                    console.log(`  🔍 ${repo.name} is a fork, checking upstream and branches...`);
+                    console.log(`   ${repo.name} is a fork, checking upstream and branches...`);
 
                     // Get repo info for parent
                     const repoInfoRes = await fetchWithAuth(`https://api.github.com/repos/${repo.full_name}?_=${cacheBuster}`);
@@ -210,7 +210,7 @@ async function fetchLatestCommits(repos) {
                             }
 
                             // Check ALL branches in fork
-                            console.log(`    📋 Checking all branches...`);
+                            console.log(`    Checking all branches...`);
                             const branchesRes = await fetchWithAuth(
                                 `https://api.github.com/repos/${repo.full_name}/branches?per_page=100&_=${cacheBuster}`
                             );
@@ -253,7 +253,7 @@ async function fetchLatestCommits(repos) {
             }
         }
 
-        console.log(`\n📊 TOTAL COMMITS COLLECTED: ${allCommits.length}`);
+        console.log(`\n TOTAL COMMITS COLLECTED: ${allCommits.length}`);
 
         // Sort by date
         allCommits.sort((a, b) => new Date(b.commit.author.date) - new Date(a.commit.author.date));
@@ -262,18 +262,18 @@ async function fetchLatestCommits(repos) {
         const today = getLocalDateKey(new Date().toISOString());
         const todayCommits = allCommits.filter(c => getLocalDateKey(c.commit.author.date) === today);
 
-        console.log(`\n📅 TODAY IS: ${today}`);
-        console.log(`📅 Commits found today: ${todayCommits.length}`);
+        console.log(`\n TODAY IS: ${today}`);
+        console.log(` Commits found today: ${todayCommits.length}`);
 
         if (todayCommits.length > 0) {
-            console.log('✅ TODAY\'S COMMITS:');
+            console.log(' TODAY\'S COMMITS:');
             todayCommits.forEach((c, i) => {
                 const time = new Date(c.commit.author.date).toLocaleTimeString();
                 console.log(`  ${i+1}. [${time}] ${c.repoFullName}`);
                 console.log(`     ${c.commit.message.split('\n')[0]}`);
             });
         } else {
-            console.log('\n⚠️ NO COMMITS TODAY. 10 most recent:');
+            console.log('\n NO COMMITS TODAY. 10 most recent:');
             allCommits.slice(0, 10).forEach((c, i) => {
                 const date = getLocalDateKey(c.commit.author.date);
                 const time = new Date(c.commit.author.date).toLocaleTimeString();
@@ -336,10 +336,10 @@ async function fetchLatestCommits(repos) {
             }, index * 100);
         });
 
-        console.log('✅ Commits displayed\n');
+        console.log(' Commits displayed\n');
 
     } catch (err) {
-        console.error('❌ Failed to fetch commits:', err);
+        console.error(' Failed to fetch commits:', err);
         container.innerHTML = '<div style="text-align: center; padding: 2rem;">Failed to load commits.</div>';
     }
 }
@@ -363,7 +363,7 @@ async function generateContributionGraph() {
         const repoRes = await fetchWithAuth(`https://api.github.com/users/${USERNAME}/repos?per_page=100&_=${cacheBuster}`);
         const repos = await repoRes.json();
 
-        console.log('📅 Building contribution graph...');
+        console.log(' Building contribution graph...');
 
         for (const repo of repos) {
             try {
