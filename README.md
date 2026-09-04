@@ -7,25 +7,39 @@ A modern, responsive portfolio website with custom animations, GitHub integratio
 ```
 portfolio/
 │
-├── index.html                  # Main HTML file
+├── index.html                  # Main portfolio page
+├── resume.html                 # Resume page
 ├── README.md                   # Documentation
+├── LICENSE                     # MIT License
+├── package.json                # Project metadata
+├── netlify.toml                # Netlify configuration
 │
 ├── assets/
 │   ├── css/
 │   │   ├── main.css           # Core styles and components
 │   │   ├── animations.css     # Animation keyframes
-│   │   └── responsive.css     # Media queries
+│   │   ├── responsive.css     # Media queries
+│   │   ├── resume.css         # Resume-specific styles
+│   │   ├── gsoc-3d.css        # GSOC 3D effects
+│   │   └── section-flyby.css  # Section flyby animations
 │   │
 │   ├── js/
 │   │   ├── main.js            # General functionality
 │   │   ├── cursor.js          # Custom cursor
-│   │   └── github.js          # GitHub API integration
+│   │   ├── github.js          # GitHub API integration
+│   │   ├── anime-animations.js # Anime.js animations
+│   │   ├── resume.js          # Resume page functionality
+│   │   └── section-flyby.js   # Section flyby effects
 │   │
 │   └── images/
 │       └── Smita.jpg          # Profile image
 │
-└── files/
-    └── RESUME_SMITA_PRAJAPATI.pdf
+├── files/
+│   ├── RESUME_SMITA_PRAJAPATI.pdf
+│   └── RESUME_SMITA_PRAJAPATI_ADE.docx
+│
+└── netlify/
+    └── functions/             # Netlify serverless functions
 ```
 
 ## 🚀 Features
@@ -47,21 +61,6 @@ portfolio/
 - **Google Fonts**: Typography
 - **Font Awesome**: Icon library (via CDN)
 
-## 📸 Screenshots
-
-### Desktop View
-
-![Desktop Screenshot](assets/images/screenshots/desktop.png)
-
-### Mobile View
-
-![Mobile Screenshot](assets/images/screenshots/mobile.png)
-
-### Dark Mode
-
-![Dark Mode](assets/images/screenshots/dark-mode.png)
-
-*Note: Add screenshots to `assets/images/screenshots/` directory*
 
 ## 🛠️ Setup Instructions
 
@@ -145,167 +144,47 @@ python -m http.server 8000
 
 ## 🎨 Customization
 
-### Colors
+Edit CSS variables in `assets/css/main.css` to customize colors and fonts.
 
-Edit CSS variables in `assets/css/main.css`:
-
-```css
-:root {
-    --bg: #050505;          /* Background */
-    --text: #ffffff;        /* Text color */
-    --text-dim: #888888;    /* Dimmed text */
-    --accent: #00ff88;      /* Primary accent */
-    --accent2: #0088ff;     /* Secondary accent */
-    --accent3: #ff0088;     /* Tertiary accent */
-}
-```
-
-### Fonts
-
-Change fonts in `index.html` (in the `<head>` section):
-
-```html
-<link href="https://fonts.googleapis.com/css2?family=YOUR_FONT&display=swap" rel="stylesheet">
-```
-
-Then update in `assets/css/main.css`:
-
-```css
-body {
-    font-family: 'YOUR_FONT', sans-serif;
-}
-```
-
-## 📱 Responsive Breakpoints
-
-- **Desktop**: 1600px+
-- **Laptop**: 968px - 1600px
-- **Tablet**: 768px - 968px
-- **Mobile**: < 768px
-- **Small Mobile**: < 480px
-
-## ⚡ Performance Tips
-
-1. **Optimize Images**:
-    - Compress images before uploading
-    - Use WebP format for better compression
-    - Keep profile image under 500KB
-
-2. **GitHub API**:
-    - Use a token to avoid rate limits (60 req/hr without, 5000 with)
-    - Consider caching GitHub data locally
-
-3. **Lazy Loading**:
-    - Already implemented for images
-    - Add `loading="lazy"` to additional images
-
-## 🌐 Browser Support
-
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Edge 90+
-
-## 📝 Sections Overview
-
-### Hero Section
-- Animated title with gradient
-- Status badge
-- CTA buttons
-- Scroll indicator
-
-### About Section
-- Profile image with hover effect
-- Bio text with highlighted keywords
-
-### Education Section
-- Educational background cards
-- Hover animations
-
-### Projects/Work Section
-- Featured projects with tags
-- External links
-- Hover effects
-
-### Skills Section
-- Skill cards with icons
-- Hover animations
-
-### Experience Section
-- Timeline layout
-- Work history with impact points
-
-### Achievements Section
-- Achievement cards with icons
-
-### GitHub Section
-- Live stats (repos, PRs)
-- Latest commits
-- Contribution graph
-- Activity chart
-
-### Contact Section
-- Social links
-- Email contact
 
 ## 🐛 Troubleshooting
 
-### GitHub Data Not Loading
+- **GitHub Data Not Loading**: Check token validity, username, and internet connection
+- **Cursor Not Visible**: Ensure JavaScript is enabled and cursor.js is loaded
+- **Animations Not Working**: Verify animations.css is loaded and check browser console for errors
 
-1. Check if token is valid
-2. Verify username is correct
-3. Check browser console for errors
-4. Ensure you have internet connection
 
-### Cursor Not Visible
+## 📝 Blog/Medium Integration
 
-- Check if JavaScript is enabled
-- Verify cursor.js is loaded properly
-- Some browsers may block custom cursors
+This portfolio includes integration with Medium for displaying your blog posts.
 
-### Animations Not Working
+### Setup
 
-- Ensure animations.css is loaded
-- Check if Intersection Observer is supported
-- Verify JavaScript is enabled
-- Try disabling browser extensions that might block animations
-- Check browser console for JavaScript errors
+1. **Get your Medium RSS Feed**:
+   - Go to your Medium profile
+   - Your RSS feed is at: `https://medium.com/feed/@yourusername`
 
-### Images Not Loading
+2. **Configure in JavaScript**:
+   Edit `assets/js/main.js` to add your Medium username:
+   ```javascript
+   const MEDIUM_USERNAME = 'your_medium_username';
+   ```
 
-- Verify image paths are correct
-- Check file names match exactly (case-sensitive)
-- Ensure images are in the correct directory
-- Clear browser cache
+3. **Display Blog Posts**:
+   The blog section will automatically fetch and display your latest Medium posts.
 
-### Styles Not Applying
+### Customization
 
-- Clear browser cache (Ctrl+Shift+Delete)
-- Check if CSS files are linked correctly in HTML
-- Verify CSS syntax is valid
-- Check browser developer tools for CSS errors
+- **Number of posts**: Change the limit in the fetch function
+- **Styling**: Modify blog card styles in `assets/css/main.css`
+- **Layout**: Adjust the grid layout in the blog section HTML
 
-### Mobile Layout Issues
+### Alternative: RSS to JSON API
 
-- Ensure viewport meta tag is present
-- Test on actual devices (not just browser dev tools)
-- Check responsive.css media queries
-- Verify touch targets are at least 44x44px
+If you need to convert RSS to JSON, use a service like:
+- `https://api.rss2json.com/v1/api.json?rss_url=` + your RSS URL
 
-## 🚧 Future Improvements
-
-- [ ] Add dark/light mode toggle
-- [ ] Implement blog section
-- [ ] Add testimonials/recommendations
-- [ ] Integrate contact form with backend
-- [ ] Add PWA support for offline access
-- [ ] Implement multi-language support
-- [ ] Add 3D animations using Three.js
-- [ ] Integrate LinkedIn API for recommendations
-- [ ] Add speaking engagements section
-- [ ] Implement search functionality
-- [ ] Add print-friendly resume view
-- [ ] Integrate analytics (Google Analytics)
+This allows easier parsing and display of blog posts.
 
 ## 📄 License
 
