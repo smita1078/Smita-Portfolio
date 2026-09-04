@@ -37,6 +37,32 @@ portfolio/
 - **Responsive Design**: Optimized for all devices
 - **Modern UI**: Glassmorphism, gradients, and hover effects
 
+## 🛠️ Technology Stack
+
+- **HTML5**: Semantic markup and structure
+- **CSS3**: Custom properties, animations, flexbox, grid
+- **JavaScript (ES6+)**: Modern JavaScript features
+- **GitHub API**: RESTful API for fetching user data
+- **Intersection Observer API**: Scroll-triggered animations
+- **Google Fonts**: Typography
+- **Font Awesome**: Icon library (via CDN)
+
+## 📸 Screenshots
+
+### Desktop View
+
+![Desktop Screenshot](assets/images/screenshots/desktop.png)
+
+### Mobile View
+
+![Mobile Screenshot](assets/images/screenshots/mobile.png)
+
+### Dark Mode
+
+![Dark Mode](assets/images/screenshots/dark-mode.png)
+
+*Note: Add screenshots to `assets/images/screenshots/` directory*
+
 ## 🛠️ Setup Instructions
 
 ### 1. Download/Clone the Repository
@@ -89,6 +115,33 @@ Simply open `index.html` in your browser. No build process required!
 python -m http.server 8000
 # Then visit http://localhost:8000
 ```
+
+## 🌍 Deployment
+
+### GitHub Pages
+
+1. Push your code to a GitHub repository
+2. Go to repository Settings → Pages
+3. Select source: `main` branch
+4. Your site will be live at `https://username.github.io/repository-name`
+
+### Netlify
+
+1. Sign up at [netlify.com](https://netlify.com)
+2. Drag and drop your portfolio folder
+3. Your site will be live instantly
+
+### Vercel
+
+1. Install Vercel CLI: `npm i -g vercel`
+2. Run `vercel` in your project directory
+3. Follow the prompts
+
+### Other Options
+
+- **Surge.sh**: `surge` command after installation
+- **Firebase Hosting**: Use Firebase CLI
+- **AWS S3 + CloudFront**: Static site hosting
 
 ## 🎨 Customization
 
@@ -215,18 +268,60 @@ body {
 - Ensure animations.css is loaded
 - Check if Intersection Observer is supported
 - Verify JavaScript is enabled
+- Try disabling browser extensions that might block animations
+- Check browser console for JavaScript errors
+
+### Images Not Loading
+
+- Verify image paths are correct
+- Check file names match exactly (case-sensitive)
+- Ensure images are in the correct directory
+- Clear browser cache
+
+### Styles Not Applying
+
+- Clear browser cache (Ctrl+Shift+Delete)
+- Check if CSS files are linked correctly in HTML
+- Verify CSS syntax is valid
+- Check browser developer tools for CSS errors
+
+### Mobile Layout Issues
+
+- Ensure viewport meta tag is present
+- Test on actual devices (not just browser dev tools)
+- Check responsive.css media queries
+- Verify touch targets are at least 44x44px
+
+## 🚧 Future Improvements
+
+- [ ] Add dark/light mode toggle
+- [ ] Implement blog section
+- [ ] Add testimonials/recommendations
+- [ ] Integrate contact form with backend
+- [ ] Add PWA support for offline access
+- [ ] Implement multi-language support
+- [ ] Add 3D animations using Three.js
+- [ ] Integrate LinkedIn API for recommendations
+- [ ] Add speaking engagements section
+- [ ] Implement search functionality
+- [ ] Add print-friendly resume view
+- [ ] Integrate analytics (Google Analytics)
 
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
+## 🙏 Credits & Acknowledgments
+
+- **Design Inspiration**: Modern portfolio design trends
+- **Icons**: Font Awesome
+- **Fonts**: Google Fonts
+- **GitHub API**: GitHub REST API
+- **Browser APIs**: Intersection Observer API
+
 ## 🤝 Contributing
 
 Feel free to fork, modify, and use this template for your own portfolio!
-
-## 📧 Support
-
-For questions or issues, please open an issue on GitHub or contact via email.
 
 ---
 
