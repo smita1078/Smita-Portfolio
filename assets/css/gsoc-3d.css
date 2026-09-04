@@ -1,0 +1,249 @@
+/* ================================
+   PRE-ANIMATION HIDDEN STATE
+   (prevents flash-of-unanimated-content before anime.js runs)
+   ================================ */
+
+.status-badge,
+.nav-links li,
+.logo {
+    opacity: 0;
+}
+
+/* ================================
+   SCROLL-DRIVEN 3D MODEL
+   ================================ */
+
+.scroll-3d-track {
+    position: fixed;
+    top: 6vh;
+    right: 2vw;
+    width: 220px;
+    height: 220px;
+    z-index: 1;
+    pointer-events: none;
+    will-change: transform;
+    filter: drop-shadow(0 0 25px rgba(0, 255, 136, 0.25));
+}
+
+.scroll-3d-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .scroll-3d-track { display: none; }
+}
+
+/* ================================
+   3D HERO CANVAS
+   ================================ */
+
+#hero-3d-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.85;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ================================
+   3D TILT (perspective card interaction)
+   ================================ */
+
+.tilt-3d {
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+}
+
+.tilt-3d:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 255, 136, 0.15);
+}
+
+.tilt-glare {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.10), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tilt-3d:hover .tilt-glare {
+    opacity: 1;
+}
+
+/* ================================
+   GSOC SECTION
+   ================================ */
+
+.gsoc-section {
+    position: relative;
+}
+
+.gsoc-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    border: 1px solid rgba(0, 255, 136, 0.25);
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.06) 0%, rgba(0, 136, 255, 0.05) 100%);
+    border-radius: 14px;
+    padding: 2rem 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.gsoc-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 60%;
+    height: 200%;
+    background: linear-gradient(120deg, transparent, rgba(0, 255, 136, 0.08), transparent);
+    transform: rotate(15deg);
+    pointer-events: none;
+}
+
+.gsoc-banner-text h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+}
+
+.gsoc-banner-text p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    max-width: 560px;
+}
+
+.gsoc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    background: rgba(0, 255, 136, 0.12);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.gsoc-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.gsoc-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.gsoc-stat-card {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.gsoc-stat-value {
+    font-size: 2.4rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.gsoc-stat-label {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.gsoc-work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.gsoc-work-card {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.75rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.gsoc-work-card .gsoc-work-number {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.06);
+}
+
+.gsoc-work-card h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    padding-right: 2.5rem;
+}
+
+.gsoc-work-card p {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.gsoc-work-card .gsoc-metric {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    background: rgba(0, 255, 136, 0.1);
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+}
+
+.gsoc-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .gsoc-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+    }
+}

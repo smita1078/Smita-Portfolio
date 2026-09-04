@@ -1,0 +1,76 @@
+/* ================================
+   SECTION FLYBY
+   Tech-object icons that fly across each section in 3D as it
+   scrolls into view. Contained within the section itself
+   (overflow hidden), so nothing drifts over the nav or other
+   sections.
+   ================================ */
+
+.flyby-layer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    perspective: 1400px;
+    z-index: 1;
+}
+
+.flyby-obj {
+    position: absolute;
+    top: var(--fy-top, 50%);
+    left: 0;
+    font-size: var(--fy-size, 2.2rem);
+    color: var(--fy-color, var(--accent));
+    opacity: 0;
+    filter: drop-shadow(0 0 14px currentColor);
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+    animation: flyby-move var(--fy-dur, 3.2s) cubic-bezier(.16,.84,.44,1) forwards;
+    animation-delay: var(--fy-delay, 0s);
+}
+
+.flyby-obj.flyby-reverse {
+    animation-name: flyby-move-rev;
+}
+
+@keyframes flyby-move {
+    0% {
+        transform: translate3d(-12vw, 0, -260px) rotateX(15deg) rotateY(-40deg) rotateZ(-18deg) scale(.5);
+        opacity: 0;
+    }
+    12% { opacity: .95; }
+    50% {
+        transform: translate3d(48vw, var(--fy-drift, -30px), 40px) rotateX(-10deg) rotateY(180deg) rotateZ(10deg) scale(1.15);
+        opacity: 1;
+    }
+    88% { opacity: .85; }
+    100% {
+        transform: translate3d(112vw, var(--fy-drift2, 20px), -120px) rotateX(20deg) rotateY(380deg) rotateZ(-8deg) scale(.6);
+        opacity: 0;
+    }
+}
+
+@keyframes flyby-move-rev {
+    0% {
+        transform: translate3d(112vw, 0, -260px) rotateX(-15deg) rotateY(40deg) rotateZ(18deg) scale(.5);
+        opacity: 0;
+    }
+    12% { opacity: .95; }
+    50% {
+        transform: translate3d(48vw, var(--fy-drift, -30px), 40px) rotateX(10deg) rotateY(-180deg) rotateZ(-10deg) scale(1.15);
+        opacity: 1;
+    }
+    88% { opacity: .85; }
+    100% {
+        transform: translate3d(-12vw, var(--fy-drift2, 20px), -120px) rotateX(-20deg) rotateY(-380deg) rotateZ(8deg) scale(.6);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .flyby-obj { font-size: calc(var(--fy-size, 2.2rem) * .7); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .flyby-layer { display: none; }
+}

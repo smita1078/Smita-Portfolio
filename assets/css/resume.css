@@ -1,0 +1,321 @@
+/* ================================
+   ANIMATED RESUME PAGE
+   ================================ */
+
+body.resume-body {
+    cursor: auto;
+    background: var(--bg);
+}
+
+.resume-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.resume-back {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.85;
+    transition: opacity 0.3s;
+}
+
+.resume-back:hover { opacity: 1; }
+
+.resume-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.resume-actions a, .resume-actions button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text);
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+.resume-actions a:hover, .resume-actions button:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.resume-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 9rem 2rem 6rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header */
+.resume-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.resume-name {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.resume-name span {
+    display: inline-block;
+}
+
+.resume-role {
+    font-size: 1.15rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    min-height: 1.6em;
+}
+
+.resume-role .cursor-blink {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: var(--accent);
+    margin-left: 2px;
+    vertical-align: middle;
+    animation: resumeBlink 0.8s steps(1) infinite;
+}
+
+@keyframes resumeBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.resume-contact {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+
+.resume-contact a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.resume-contact a:hover { color: var(--accent); }
+
+/* Section */
+.resume-section {
+    margin-bottom: 3rem;
+}
+
+.resume-section-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.resume-summary {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+}
+
+.resume-summary strong { color: var(--text); }
+
+/* Skill bars */
+.resume-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem 3rem;
+}
+
+.resume-skill {
+    margin-bottom: 0.5rem;
+}
+
+.resume-skill-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.resume-skill-label span:last-child {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.resume-skill-track {
+    height: 6px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.resume-skill-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+
+/* Experience */
+.resume-job {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    opacity: 0;
+}
+
+.resume-job::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(0, 255, 136, 0.15);
+}
+
+.resume-job-head {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.resume-job-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.resume-job-org {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+.resume-job-date {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-style: italic;
+}
+
+.resume-job ul {
+    margin-top: 0.6rem;
+    padding-left: 1.2rem;
+}
+
+.resume-job ul li {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-dim);
+    margin-bottom: 0.3rem;
+}
+
+.resume-job ul li strong { color: var(--text); }
+
+/* Projects & Education & Achievements */
+.resume-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.resume-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.resume-card h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.resume-card h4 a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--text-dim);
+}
+
+.resume-card p {
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+}
+
+.resume-achievements-list {
+    list-style: none;
+}
+
+.resume-achievements-list li {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+    font-size: 0.95rem;
+    color: var(--text-dim);
+    opacity: 0;
+}
+
+.resume-achievements-list li i {
+    color: var(--accent);
+    margin-top: 0.2rem;
+}
+
+.resume-achievements-list li strong { color: var(--text); }
+
+.resume-footer-note {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 700px) {
+    .resume-topbar { padding: 1rem 1.25rem; }
+    .resume-actions a span, .resume-actions button span { display: none; }
+    .resume-wrap { padding-top: 7rem; }
+}
+
+@media print {
+    .resume-topbar, #hero-3d-canvas, .cursor, .cursor-follower, .grain { display: none !important; }
+    body { background: #fff; color: #000; }
+    .resume-wrap { padding-top: 1rem; }
+}

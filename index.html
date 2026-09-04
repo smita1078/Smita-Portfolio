@@ -13,6 +13,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/gsoc-3d.css">
+    <link rel="stylesheet" href="assets/css/section-flyby.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
@@ -29,6 +31,7 @@
         <li><a href="#work">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#gsoc">GSoC</a></li>
         <li><a href="#achievements">Achievements</a></li>
         <li><a href="#github">GitHub</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -45,11 +48,16 @@
             <span>Available for opportunities</span>
         </div>
         <h1 class="hero-title">Smita Prajapati</h1>
+
         <p class="hero-subtitle">SENIOR ANALYST | Deutsche Bank</p>
         <div class="hero-buttons">
             <a href="#work" class="hero-btn hero-btn-primary">
                 <i class="fas fa-folder-open"></i>
                 <span>View Projects</span>
+            </a>
+            <a href="resume.html" class="hero-btn hero-btn-secondary">
+                <i class="fas fa-file-alt"></i>
+                <span>View Animated Resume</span>
             </a>
             <a href="files/RESUME_SMITA_PRAJAPATI.pdf" download class="hero-btn hero-btn-secondary">
                 <i class="fas fa-download"></i>
@@ -76,7 +84,7 @@
                 I'm a <strong>Senior Analyst</strong> at Deutsche Bank, specializing in building scalable backend systems and comprehensive test automation frameworks. I architect <strong>microservices with Java and Spring Boot</strong>, develop <strong>REST APIs</strong>, and create automation solutions that have reduced manual testing efforts by 80% while ensuring production reliability.
             </p>
             <p style="margin-bottom: 2rem;">
-                As a <strong>Silver Medalist from NIT Raipur</strong> (9.53 CGPA), I combine strong software engineering fundamentals with quality-first development practices. I'm an active <strong>open source contributor</strong> to Checkstyle with 30+ merged PRs, demonstrating my commitment to code quality and collaborative development.
+                As a <strong>Silver Medalist from NIT Raipur</strong> (9.53 CGPA), I combine strong software engineering fundamentals with quality-first development practices. I'm a <strong>Google Summer of Code 2026</strong> contributor to Checkstyle, with <strong>260+ merged pull requests</strong> across 3 repositories — building automated documentation tooling, search infrastructure, and CI/CD pipelines used by 1,000+ developers.
             </p>
             <p>
                 My expertise spans backend development, test automation frameworks, cloud technologies (GCP), and AI integration. I build robust software while ensuring it's testable, maintainable, and production-ready — bridging development and quality engineering.
@@ -88,19 +96,19 @@
 <section id="education">
     <h2 class="section-title fade-up">Education</h2>
     <div class="education-grid">
-        <div class="education-card">
+        <div class="education-card tilt-3d">
             <div class="education-degree">B.Tech in Electronics & Communication Engineering</div>
             <div class="education-institution">National Institute of Technology, Raipur</div>
             <div class="education-year">2020 - 2024</div>
             <div class="education-score">9.53 CGPA - Silver Medalist</div>
         </div>
-        <div class="education-card">
+        <div class="education-card tilt-3d">
             <div class="education-degree">Class 12th - CBSE Board</div>
             <div class="education-institution">Delhi Public School Bhilai</div>
             <div class="education-year">2019 - 2020</div>
             <div class="education-score">94.8%</div>
         </div>
-        <div class="education-card">
+        <div class="education-card tilt-3d">
             <div class="education-degree">Class 10th - CBSE Board</div>
             <div class="education-institution">Delhi Public School Bhilai</div>
             <div class="education-year">2017 - 2018</div>
@@ -112,10 +120,35 @@
 <section id="work">
     <h2 class="section-title fade-up">Featured Projects</h2>
 
-    <div class="work-item" onclick="window.open('https://github.com/smita1078/FinWise_AI_Powered_Voice_Assistant', '_blank')">
+    <div class="work-item tilt-3d" onclick="window.open('https://github.com/smita1078/api-monitor', '_blank')">
+        <div class="work-header">
+            <h3 class="work-title">API Monitor</h3>
+            <span class="work-number">01</span>
+        </div>
+        <div class="work-meta">
+            <span>2026</span>
+            <span>Spring Boot / Observability</span>
+        </div>
+        <p class="work-desc">
+            Reusable, zero-config Spring Boot observability framework that automatically monitors REST APIs, with P95/P99 latency analytics, alerting, and a live dashboard — no code changes required.
+        </p>
+        <div class="work-tags">
+            <span class="tag">Java</span>
+            <span class="tag">Spring Boot</span>
+            <span class="tag">Observability</span>
+            <span class="tag">Latency Analytics</span>
+        </div>
+        <div class="work-links">
+            <a href="https://github.com/smita1078/api-monitor" target="_blank" class="work-link" onclick="event.stopPropagation()">
+                <i class="fab fa-github"></i> Source Code
+            </a>
+        </div>
+    </div>
+
+    <div class="work-item tilt-3d" onclick="window.open('https://github.com/smita1078/FinWise_AI_Powered_Voice_Assistant', '_blank')">
         <div class="work-header">
             <h3 class="work-title">FinWise AI Voice Bot</h3>
-            <span class="work-number">01</span>
+            <span class="work-number">02</span>
         </div>
         <div class="work-meta">
             <span>2024</span>
@@ -138,10 +171,10 @@
         </div>
     </div>
 
-    <div class="work-item" onclick="window.open('https://music-drumkit.netlify.app/', '_blank')">
+    <div class="work-item tilt-3d" onclick="window.open('https://music-drumkit.netlify.app/', '_blank')">
         <div class="work-header">
             <h3 class="work-title">Music DrumKit</h3>
-            <span class="work-number">02</span>
+            <span class="work-number">03</span>
         </div>
         <div class="work-meta">
             <span>2024</span>
@@ -166,10 +199,10 @@
         </div>
     </div>
 
-    <div class="work-item fade-up" onclick="window.open('https://smita-portfolio.netlify.app', '_blank')">
+    <div class="work-item fade-up tilt-3d" onclick="window.open('https://smita-portfolio.netlify.app', '_blank')">
         <div class="work-header">
             <h3 class="work-title">Personal Portfolio</h3>
-            <span class="work-number">03</span>
+            <span class="work-number">04</span>
         </div>
         <div class="work-meta">
             <span>2024</span>
@@ -199,32 +232,32 @@
 <section id="skills">
     <h2 class="section-title fade-up">Technical Expertise</h2>
     <div class="skills-grid">
-        <div class="skill-card">
+        <div class="skill-card tilt-3d">
             <div class="skill-icon"><i class="fas fa-robot"></i></div>
             <div class="skill-name">Test Automation</div>
             <div class="skill-desc">Selenium WebDriver, WebdriverIO, Cucumber BDD, API Testing (REST), Framework Design</div>
         </div>
-        <div class="skill-card">
+        <div class="skill-card tilt-3d">
             <div class="skill-icon"><i class="fas fa-code"></i></div>
             <div class="skill-name">Backend Development</div>
             <div class="skill-desc">Java, Spring Boot, TypeScript, JavaScript, Microservices Architecture</div>
         </div>
-        <div class="skill-card">
+        <div class="skill-card tilt-3d">
             <div class="skill-icon"><i class="fas fa-cloud"></i></div>
             <div class="skill-name">Cloud & AI</div>
             <div class="skill-desc">Google Cloud Platform, Dialogflow CX, Vertex AI</div>
         </div>
-        <div class="skill-card">
+        <div class="skill-card tilt-3d">
             <div class="skill-icon"><i class="fas fa-rocket"></i></div>
             <div class="skill-name">CI/CD & DevOps</div>
             <div class="skill-desc">Jenkins, TeamCity, Docker, Allure, Splunk</div>
         </div>
-        <div class="skill-card">
+        <div class="skill-card tilt-3d">
             <div class="skill-icon"><i class="fas fa-database"></i></div>
             <div class="skill-name">Database</div>
             <div class="skill-desc">SQL, MySQL, Database Design & Optimization</div>
         </div>
-        <div class="skill-card">
+        <div class="skill-card tilt-3d">
             <div class="skill-icon"><i class="fab fa-github"></i></div>
             <div class="skill-name">Version Control</div>
             <div class="skill-desc">Git, GitHub, Collaborative Development</div>
@@ -260,70 +293,170 @@
         </div>
         <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <div class="timeline-date">December 2024 — Present</div>
-            <h3 class="timeline-title">Open Source Contributor</h3>
-            <div class="timeline-company">Checkstyle (GSOC Organization)</div>
+            <div class="timeline-date">June 2026 — August 2026</div>
+            <h3 class="timeline-title">Google Summer of Code Contributor</h3>
+            <div class="timeline-company">Checkstyle (GSoC 2026 · "Enhancement For Website")</div>
             <ul class="timeline-impact">
-                <li>Contributed to Checkstyle, improving code quality and maintainability for 1,000+ developers using the open-source static analysis tool</li>
-                <li>Merged 30+ pull requests and collaborated with the global developer community via code reviews and discussions</li>
+                <li>Delivered 260+ merged pull requests across 3 repositories (250+ hours vs. 175 planned), improving code quality and documentation for 1,000+ developers using the open-source static analysis tool</li>
+                <li>Built a Maven-based search index generator and client-side search engine, shipping full-text search across 2,500+ documentation entries</li>
+                <li>Reduced suppressed test examples by 94% (228 → 10) via a new AST-comparison validation framework</li>
+                <li>Collaborated with mentors and the global developer community via code reviews, RFCs, and public discussion</li>
             </ul>
         </div>
+    </div>
+</section>
+
+<section id="gsoc" class="gsoc-section">
+    <h2 class="section-title fade-up">Google Summer of Code 2026</h2>
+
+    <div class="gsoc-banner">
+        <div class="gsoc-banner-text">
+            <div class="gsoc-badge"><i class="fas fa-code-branch"></i> Checkstyle · Enhancement For Website</div>
+            <h3>260+ PRs merged · 60+ issues closed · 250+ hours delivered</h3>
+            <p>
+                Selected as a GSoC 2026 contributor to Checkstyle — a static-analysis tool with 9k+ GitHub stars used by 1,000+ Java developers. Built automated documentation tooling, full-text search, and CI/CD modernization from June to August 2026.
+            </p>
+        </div>
+        <div class="gsoc-cta">
+            <a href="https://github.com/smita1078/gsoc-2026-checkstyle-final-work" target="_blank" class="hero-btn hero-btn-primary">
+                <i class="fab fa-github"></i>
+                <span>View Full Work Summary</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="gsoc-stats">
+        <div class="gsoc-stat-card">
+            <div class="gsoc-stat-value" data-counter="260" data-suffix="+">0</div>
+            <div class="gsoc-stat-label">PRs Merged</div>
+        </div>
+        <div class="gsoc-stat-card">
+            <div class="gsoc-stat-value" data-counter="60" data-suffix="+">0</div>
+            <div class="gsoc-stat-label">Issues Closed</div>
+        </div>
+        <div class="gsoc-stat-card">
+            <div class="gsoc-stat-value" data-counter="94" data-suffix="%">0</div>
+            <div class="gsoc-stat-label">Suppression Reduction</div>
+        </div>
+        <div class="gsoc-stat-card">
+            <div class="gsoc-stat-value" data-counter="2500" data-suffix="+">0</div>
+            <div class="gsoc-stat-label">Search Entries Indexed</div>
+        </div>
+        <div class="gsoc-stat-card">
+            <div class="gsoc-stat-value" data-counter="300" data-suffix="+">0</div>
+            <div class="gsoc-stat-label">Docs Pages w/ TOC Nav</div>
+        </div>
+        <div class="gsoc-stat-card">
+            <div class="gsoc-stat-value" data-counter="8000" data-suffix="+">0</div>
+            <div class="gsoc-stat-label">Lines of Code Written</div>
+        </div>
+    </div>
+
+    <div class="gsoc-work-grid">
+        <div class="gsoc-work-card tilt-3d">
+            <span class="gsoc-work-number">01</span>
+            <h4>AST Example Consistency & Quality Enforcement</h4>
+            <p>Enhanced the AST comparator to catch real inconsistencies and implemented 4 new enforcement tests, systematically fixing 160+ check modules and separating the Examples/UseCases architecture.</p>
+            <span class="gsoc-metric">201 PRs · 94% suppression reduction</span>
+        </div>
+        <div class="gsoc-work-card tilt-3d">
+            <span class="gsoc-work-number">02</span>
+            <h4>Client-Side Search Implementation</h4>
+            <p>Built <code>SearchIndexGenerator.java</code>, a Maven utility that walks xdocs at build time and generates 2,500+ indexed entries, paired with a real-time <code>search.js</code> engine with keyboard navigation.</p>
+            <span class="gsoc-metric">6 PRs · Site-wide search deployed</span>
+        </div>
+        <div class="gsoc-work-card tilt-3d">
+            <span class="gsoc-work-number">03</span>
+            <h4>Table of Contents Navigation</h4>
+            <p>Implemented <code>TocMacro.java</code>, a Doxia macro that scans templates for section IDs and renders a styled "In This Article" sidebar at build time.</p>
+            <span class="gsoc-metric">6 PRs · 300+ pages with TOC</span>
+        </div>
+        <div class="gsoc-work-card tilt-3d">
+            <span class="gsoc-work-number">04</span>
+            <h4>CI/CD & Infrastructure Modernization</h4>
+            <p>Consolidated 4 workflow jobs into 1, migrated to Doxia 2.1.0, and swapped the link-checker plugin for a 10-100x speed improvement (5-10 min → 30-60 sec).</p>
+            <span class="gsoc-metric">14 PRs · 10-100x faster CI</span>
+        </div>
+        <div class="gsoc-work-card tilt-3d">
+            <span class="gsoc-work-number">05</span>
+            <h4>Bug Fixes & Improvements</h4>
+            <p>Fixed JavaScript errors, resolved broken documentation links, added missing property examples, and shipped improvements to the Checkstyle test-configs repository.</p>
+            <span class="gsoc-metric">28 PRs · Cross-repo fixes</span>
+        </div>
+        <div class="gsoc-work-card tilt-3d">
+            <span class="gsoc-work-number">06</span>
+            <h4>Mentorship & Collaboration</h4>
+            <p>Worked closely with Checkstyle maintainers Roman Ivanov, Stoyan Kostadinov, and the wider community through detailed code reviews and public discussions.</p>
+            <span class="gsoc-metric">5 mentors · 250+ hours delivered</span>
+        </div>
+    </div>
+
+    <div class="gsoc-links">
+        <a href="https://github.com/smita1078/gsoc-2026-checkstyle-final-work" target="_blank" class="contact-link">
+            <i class="fab fa-github"></i> Work Summary Repo
+        </a>
+        <a href="https://github.com/checkstyle/checkstyle/pulls?q=is:pr+author:smita1078+is:merged" target="_blank" class="contact-link">
+            <i class="fas fa-code-pull-request"></i> All Merged PRs
+        </a>
+        <a href="https://github.com/orgs/checkstyle/projects/17" target="_blank" class="contact-link">
+            <i class="fas fa-diagram-project"></i> Project Board
+        </a>
     </div>
 </section>
 
 <section id="achievements">
     <h2 class="section-title fade-up">Achievements & Recognition</h2>
     <div class="achievements-grid">
-        <div class="achievement-card">
+        <div class="achievement-card tilt-3d">
             <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
             <div class="achievement-text">
                 <div class="achievement-title">Silver Medalist - NIT Raipur</div>
                 <div class="achievement-desc">B.Tech in Electronics & Communication Engineering (9.53 CGPA) - 2024</div>
             </div>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card tilt-3d">
             <div class="achievement-icon"><i class="fas fa-award"></i></div>
             <div class="achievement-text">
                 <div class="achievement-title">RCP Excellence Award - Deutsche Bank</div>
                 <div class="achievement-desc">Recognized for achieving 50% code reduction and delivering scalable architecture - 2025</div>
             </div>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card tilt-3d">
             <div class="achievement-icon"><i class="fas fa-star"></i></div>
             <div class="achievement-text">
                 <div class="achievement-title">Winner - The Economic Times Campus Star 6.0</div>
                 <div class="achievement-desc">Brightest Engineering Minds (2022-2023)</div>
             </div>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card tilt-3d">
             <div class="achievement-icon"><i class="fas fa-cloud"></i></div>
             <div class="achievement-text">
                 <div class="achievement-title">Google Cloud Platform Certified</div>
                 <div class="achievement-desc">Learn to Earn Cloud Challenges by Qwiklabs & Google Cloud</div>
             </div>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card tilt-3d">
             <div class="achievement-icon"><i class="fas fa-flask"></i></div>
             <div class="achievement-text">
                 <div class="achievement-title">Research Fellow - IISc Bangalore</div>
                 <div class="achievement-desc">Indian Academy of Sciences Summer Research Fellowship (2022)</div>
             </div>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card tilt-3d">
             <div class="achievement-icon"><i class="fas fa-laptop-code"></i></div>
             <div class="achievement-text">
                 <div class="achievement-title">Top Participant - Deutsche Bank Global Hackathon 2025</div>
                 <div class="achievement-desc">Competed among 380 teams globally</div>
             </div>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card tilt-3d">
             <div class="achievement-icon"><i class="fas fa-users"></i></div>
             <div class="achievement-text">
                 <div class="achievement-title">Core Manager - Nrityam Dance Club, NIT Raipur</div>
                 <div class="achievement-desc">Leadership & Management (2021-2024)</div>
             </div>
         </div>
-        <div class="achievement-card">
+        <div class="achievement-card tilt-3d">
             <div class="achievement-icon"><i class="fas fa-medal"></i></div>
             <div class="achievement-text">
                 <div class="achievement-title">Scholar Badge Awardee - DPS Bhilai</div>
@@ -396,33 +529,6 @@
         </div>
     </div>
 
-    <div class="activity-overview">
-        <h3 style="font-size: 1.8rem; margin-bottom: 2rem; font-weight: 600;">Activity Overview</h3>
-        <div class="activity-chart-wrapper">
-            <div class="activity-chart">
-                <canvas id="activityChart"></canvas>
-            </div>
-            <div class="activity-stats">
-                <div class="activity-stat">
-                    <div class="stat-value" id="statCommits">--</div>
-                    <div class="stat-label">Commits</div>
-                </div>
-                <div class="activity-stat">
-                    <div class="stat-value" id="statCodeReview">--</div>
-                    <div class="stat-label">Code Review</div>
-                </div>
-                <div class="activity-stat">
-                    <div class="stat-value" id="statPRs">--</div>
-                    <div class="stat-label">Pull Requests</div>
-                </div>
-                <div class="activity-stat">
-                    <div class="stat-value" id="statIssues">--</div>
-                    <div class="stat-label">Issues</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="text-center mt-5">
         <a href="https://github.com/smita1078" target="_blank" class="contact-link">
             <i class="fab fa-github"></i> View GitHub Profile
@@ -452,17 +558,19 @@
 </section>
 
 <footer>
-    <div>© 2025 Smita Prajapati</div>
-    <div>Silver Medalist NIT Raipur | Senior Analyst | Checkstyle Contributor</div>
+    <div>© 2026 Smita Prajapati</div>
+    <div>Silver Medalist NIT Raipur | Senior Analyst | GSoC 2026 Checkstyle Contributor</div>
 </footer>
 
 <!-- External Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
 
 <!-- Custom Scripts -->
 <script src="assets/js/cursor.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/github.js"></script>
+<script src="assets/js/anime-animations.js"></script>
+<script src="assets/js/section-flyby.js"></script>
 
 </body>
 </html>
